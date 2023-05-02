@@ -8,23 +8,21 @@
     <title>Document</title>
 
     <script>
-        //Define constants Rock, paper & scissors
-        const rock = 'Rock';
-        const paper = 'Paper';
-        const scissors = 'Scissors';
 
-        // Ask the user to input one of them
-        let userChoice = prompt('Please choose between "Rock", "Paper","Scissors"', "");
+
+        // Ask the user to input one of them, make it non case sensitive
+        let userChoice = prompt('Please choose between "Rock", "Paper","Scissors"', "").toLowerCase();
 
 
         let checkUserChoice;
+
 
 
         // Verify that the value entered by the user is correct 
 
         function checkChoice(choice) {
 
-            if (choice.toLowerCase() === "rock" || choice.toLowerCase() === "paper" || choice.toLowerCase() === "scissors") {
+            if (choice === "rock" || choice === "paper" || choice === "scissors") {
                 checkUserChoice = true;
             }
             else {
@@ -34,11 +32,48 @@
             return checkUserChoice;
         }
 
-        //If a correct value is chosen, make the computer choose one of the constant randomly
+        // Assign a random choice to the computer 
+        function computerChoice() {
+
+            let computerNbChoice = Math.floor(Math.random() * 3);
+            let computerChoice;
+            if (computerNbChoice === 0) {
+                computerChoice = "rock"
+            }
+            else if (computerNbChoice === 1) {
+                computerChoice = "paper"
+            }
+            else if (computerNbChoice === 2) {
+                computerChoice = "scissors"
+            }
+            return computerChoice
+
+
+
+
+
+
+        }
+
         function rockPaperScissors(choice) {
             checkChoice(choice);
+
+
+            //If a correct value is chosen, make the computer choose one of the constant randomly
             if (checkUserChoice) {
-                return ("the game is on");
+
+                if (computerChoice() === userChoice) {
+                    return (`Computer: ${computerChoice()} | Player: ${userChoice} EVEN GAME !`);
+                }
+                else if (userChoice === "scissors" && computerChoice() === "paper" ||
+                    userChoice === "paper" && computerChoice() === "rock" ||
+                    userChoice === "rock" && computerChoice() === "scissors") {
+                    return (`Computer: ${computerChoice()} | Player: ${userChoice} YOU WON !`);
+                }
+                else {
+                    return (`Computer: ${computerChoice()} | Player: ${userChoice} YOU LOST :'(`);
+                }
+
 
             }
             //If the value is not right show an error message and ask the user to try again
@@ -53,6 +88,9 @@
 
 
         //Compare User & computer value
+
+
+
         // Show the appropriate message
         // Ask if the player wants to play again
 
