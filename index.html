@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //Define constants Rock, paper & scissors
+        const rock = 'Rock';
+        const paper = 'Paper';
+        const scissors = 'Scissors';
+
+        // Ask the user to input one of them
+        let userChoice = prompt('Please choose between "Rock", "Paper","Scissors"', "");
+
+
+        let checkUserChoice;
+
+       
+        // Verify that the value entered by the user is correct 
+        
+        function checkChoice(choice){
+                      
+            if (choice.toLowerCase() === "rock" || choice.toLowerCase() === "paper" ||choice.toLowerCase() === "scissors"){
+                checkUserChoice = true; 
+            }
+            else{
+                checkUserChoice = false; 
+            }
+            
+            return checkUserChoice;
+        }
+        
+         //If a correct value is chosen, make the computer choose one of the constant randomly
+
+        checkChoice(userChoice)        
+
+        //If the value is not right show an error message and ask the user to try again
+        
+        //Compare User & computer value
+        // Show the appropriate message
+        // Ask if the player wants to play again
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
