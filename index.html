@@ -9,7 +9,6 @@
 
     <script>
 
-
         // Ask the user to input one of them, make it non case sensitive
         let userChoice = prompt('Please choose between "Rock", "Paper","Scissors"', "").toLowerCase();
 
@@ -24,8 +23,7 @@
 
             if (choice === "rock" || choice === "paper" || choice === "scissors") {
                 checkUserChoice = true;
-            }
-            else {
+            } else {
                 checkUserChoice = false;
             }
 
@@ -39,11 +37,9 @@
 
             if (computerNbChoice === 0) {
                 computerChoice = "rock"
-            }
-            else if (computerNbChoice === 1) {
+            } else if (computerNbChoice === 1) {
                 computerChoice = "paper"
-            }
-            else if (computerNbChoice === 2) {
+            } else if (computerNbChoice === 2) {
                 computerChoice = "scissors"
             }
             return computerChoice;
@@ -62,16 +58,14 @@
 Player: ${userChoice}
 
 EVEN GAME !`);
-                }
-                else if (userChoice === "scissors" && cpChoice === "paper" ||
+                } else if (userChoice === "scissors" && cpChoice === "paper" ||
                     userChoice === "paper" && cpChoice === "rock" ||
                     userChoice === "rock" && cpChoice === "scissors") {
                     return (`Computer: ${cpChoice}
 Player: ${userChoice} 
                     
 YOU WON !`);
-                }
-                else {
+                } else {
                     return (`Computer: ${cpChoice}
 Player: ${userChoice} 
 
@@ -87,6 +81,7 @@ YOU LOST :'(`);
             }
         }
 
+        // Ask if the player wants to play again
 
         let result = window.confirm(rockPaperScissors(userChoice) + `
         
@@ -95,13 +90,6 @@ Do you want to play again ? `);
         if (result === true) {
             location.reload()
         }
-
-
-
-
-
-        // Ask if the player wants to play again
-
     </script>
 
 </head>
