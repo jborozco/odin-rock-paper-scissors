@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,27 +19,39 @@
 
         let checkUserChoice;
 
-       
+
         // Verify that the value entered by the user is correct 
-        
-        function checkChoice(choice){
-                      
-            if (choice.toLowerCase() === "rock" || choice.toLowerCase() === "paper" ||choice.toLowerCase() === "scissors"){
-                checkUserChoice = true; 
+
+        function checkChoice(choice) {
+
+            if (choice.toLowerCase() === "rock" || choice.toLowerCase() === "paper" || choice.toLowerCase() === "scissors") {
+                checkUserChoice = true;
             }
-            else{
-                checkUserChoice = false; 
+            else {
+                checkUserChoice = false;
             }
-            
+
             return checkUserChoice;
         }
-        
-         //If a correct value is chosen, make the computer choose one of the constant randomly
 
-        checkChoice(userChoice)        
+        //If a correct value is chosen, make the computer choose one of the constant randomly
+        function rockPaperScissors(choice) {
+            checkChoice(choice);
+            if (checkUserChoice) {
+                return ("the game is on");
 
-        //If the value is not right show an error message and ask the user to try again
-        
+            }
+            //If the value is not right show an error message and ask the user to try again
+            else {
+                return ("the game is off");
+
+            }
+        }
+
+
+        console.log(rockPaperScissors(userChoice));
+
+
         //Compare User & computer value
         // Show the appropriate message
         // Ask if the player wants to play again
@@ -46,7 +59,9 @@
     </script>
 
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
