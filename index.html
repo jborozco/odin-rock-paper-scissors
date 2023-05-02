@@ -36,7 +36,7 @@
         function computerChoice() {
 
             let computerNbChoice = Math.floor(Math.random() * 3);
-            let computerChoice;
+
             if (computerNbChoice === 0) {
                 computerChoice = "rock"
             }
@@ -46,32 +46,25 @@
             else if (computerNbChoice === 2) {
                 computerChoice = "scissors"
             }
-            return computerChoice
-
-
-
-
-
-
+            return computerChoice;
         }
 
         function rockPaperScissors(choice) {
             checkChoice(choice);
 
-
             //If a correct value is chosen, make the computer choose one of the constant randomly
             if (checkUserChoice) {
-
-                if (computerChoice() === userChoice) {
-                    return (`Computer: ${computerChoice()} | Player: ${userChoice} EVEN GAME !`);
+                let cpChoice = computerChoice();
+                if (cpChoice === userChoice) {
+                    return (`Computer: ${computerChoice} | Player: ${userChoice} EVEN GAME !`);
                 }
-                else if (userChoice === "scissors" && computerChoice() === "paper" ||
-                    userChoice === "paper" && computerChoice() === "rock" ||
-                    userChoice === "rock" && computerChoice() === "scissors") {
-                    return (`Computer: ${computerChoice()} | Player: ${userChoice} YOU WON !`);
+                else if (userChoice === "scissors" && cpChoice === "paper" ||
+                    userChoice === "paper" && cpChoice === "rock" ||
+                    userChoice === "rock" && cpChoice === "scissors") {
+                    return (`Computer: ${cpChoice} | Player: ${userChoice} YOU WON !`);
                 }
                 else {
-                    return (`Computer: ${computerChoice()} | Player: ${userChoice} YOU LOST :'(`);
+                    return (`Computer: ${cpChoice} | Player: ${userChoice} YOU LOST :'(`);
                 }
 
 
