@@ -1,0 +1,113 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F8E5FF;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    width: 640px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#logo {
+    display: block;
+    position: fixed;
+    margin: 20px;
+}
+
+#manVsBot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+#man,
+#bot {
+    width: 202px;
+    height: 202px;
+    border: 1px solid #000000;
+    border-radius: 13px;
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#man>div,
+#bot>div {
+
+    transform: rotate(-45deg);
+}
+
+#bot>div img {
+    position: relative;
+    top: -15px
+}
+
+
+#text-prompt {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#text-prompt h1 {
+    text-align: center;
+}
+
+#text-prompt p {
+    text-align: center;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button {
+    box-sizing: content-box;
+    background: #D6CCFF;
+    border-width: 2px 2px 10px 2px;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 36px;
+    n
+}
+
+.button.hand {
+    width: 157px;
+    height: 111px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.button.hand.paper {
+    background-image: url('img/hand-paper.svg');
+}
+
+.button.hand.scissors {
+    background-image: url('img/hand-scissors.svg');
+}
+
+.button.hand.rock {
+    background-image: url('img/hand-stone.svg');
+}
