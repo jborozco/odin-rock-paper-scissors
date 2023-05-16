@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;900&display=swap');
+
 * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -29,7 +31,7 @@ body {
 #logo {
     display: block;
     position: fixed;
-    margin: 20px;
+    margin: 40px;
 }
 
 /* HEADS */
@@ -161,12 +163,18 @@ body {
 
 #text-prompt p {
     text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 /* BUTTONS */
 
 
-#buttons {
+#buttons,
+#buttons-restart {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -199,13 +207,18 @@ body {
 }
 
 .button.hand,
-.button.hand div {
+.button.hand div,
+.button.yesno,
+.button.yesno div {
     width: 157px;
     height: 111px;
     background-position: center center;
     background-repeat: no-repeat;
 
 }
+
+
+
 
 .button.hand:hover div {
     position: relative;
@@ -234,4 +247,28 @@ body {
 
 .button.hand .rock {
     background-image: url('img/hand-stone.svg');
+}
+
+.button.yesno .yes {
+    background-image: url('img/btn-yes.svg');
+}
+
+.button.yesno .no {
+    background-image: url('img/btn-no.svg');
+}
+
+#buttons.btn-hide,
+#buttons-restart.btn-hide {
+    display: none;
+    visibility: hidden;
+}
+
+a {
+    color: #28A6DE;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #28A6DE;
+    text-decoration: underline;
 }
