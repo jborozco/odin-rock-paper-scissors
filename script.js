@@ -5,48 +5,34 @@ let userChoice;
 let buttonPaper = document.querySelector('#buttonPaper');
 let buttonScissors = document.querySelector('#buttonScissors');
 let buttonRock = document.querySelector('#buttonRock');
-
+let title = document.querySelector('#text-prompt .title img');
+let subtext = document.querySelector('#text-prompt p');
+let buttons = document.querySelector('#buttons');
+let manFace = document.querySelector('#man-face img');
+let botFace = document.querySelector('#bot-face img');
+let manFaceBox = document.querySelector('#man');
+let botFaceBox = document.querySelector('#bot');
+let manBubble = document.querySelector('#man .bubble img');
+let botBubble = document.querySelector('#bot .bubble img');
 
 buttonPaper.onclick = () => {
     userChoice = "paper";
-    console.log(userChoice);
-    // Ask if the player wants to play again
+    rockPaperScissors(userChoice);
 
-    let result = window.confirm(rockPaperScissors(userChoice) + `
-        
-Do you want to play again ? `);
-
-    if (result === true) {
-        location.reload()
-    }
 }
 
 buttonScissors.onclick = () => {
     userChoice = "scissors";
-    console.log(userChoice);
-    // Ask if the player wants to play again
+    rockPaperScissors(userChoice);
 
-    let result = window.confirm(rockPaperScissors(userChoice) + `
-        
-Do you want to play again ? `);
-
-    if (result === true) {
-        location.reload()
-    }
 }
 
 buttonRock.onclick = () => {
     userChoice = "rock";
-    console.log(userChoice);
+    rockPaperScissors(userChoice);
     // Ask if the player wants to play again
 
-    let result = window.confirm(rockPaperScissors(userChoice) + `
-        
-Do you want to play again ? `);
 
-    if (result === true) {
-        location.reload()
-    }
 }
 
 
@@ -69,31 +55,35 @@ function computerChoice() {
 }
 
 function rockPaperScissors(choice) {
-
-    //If a correct value is chosen, make the computer choose one of the constant randomly
-
-    //Compare User & computer value + Show the appropriate message
-
     let cpChoice = computerChoice();
-    if (cpChoice === userChoice) {
-        return (`Computer: ${computerChoice}
-Player: ${userChoice}
+    //Show the result
 
-EVEN GAME !`);
-    } else if (userChoice === "scissors" && cpChoice === "paper" ||
-        userChoice === "paper" && cpChoice === "rock" ||
-        userChoice === "rock" && cpChoice === "scissors") {
-        return (`Computer: ${cpChoice}
-Player: ${userChoice} 
-                    
-YOU WON !`);
-    } else {
-        return (`Computer: ${cpChoice}
-Player: ${userChoice} 
+    title.src = `img/text-${userChoice}.png`;
+    subtext.textContent = `VS ${cpChoice.toUpperCase()}`;
+    manFace.className = "man-answer";
+    botFace.className = "bot-answer";
+    manFace.src = "img/man-playing.svg";
+    botFace.src = "img/bot-playing.svg";
+    botBubble.src = `img/bot-bubble-${cpChoice}.svg`
+    manBubble.src = `img/man-bubble-${userChoice}.svg`
 
-YOU LOST :'(`);
-    }
+    //Function to show the final result
 
+    // function result() {
+
+    //     if (cpChoice === userChoice) { //if EVEN
+    //         title.src = "img/even-game.png";
+
+    //     } else if (userChoice === "scissors" && cpChoice === "paper" ||
+    //         userChoice === "paper" && cpChoice === "rock" ||
+    //         userChoice === "rock" && cpChoice === "scissors") { //if WIN
+    //         title.src = "img/text-win.png";
+    //     } else { // if LOST
+    //         title.src = "img/text-loose.png";
+    //     }
+    // }
+    // //After some time,compare User & computer value + Show the appropriate message
+    // setTimeout(result(), 100000);
 
 
 }

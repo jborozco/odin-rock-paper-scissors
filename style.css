@@ -72,26 +72,75 @@ body {
 
     50% {
         transform: translateY(10px);
-
-
     }
 
     100% {
         transform: translateY(0px);
     }
-
 }
 
+.man-answer {
+    animation: man-answer 0.1s ease-out infinite;
+}
+
+@keyframes man-answer {
+    0% {
+        transform: rotate(17deg);
+        scale: 1.2;
+    }
+
+    50% {
+        transform: rotate(23deg);
+        scale: 1.2;
+    }
+
+    100% {
+        transform: rotate(17deg);
+        scale: 1.2;
+    }
+}
+
+.bot-answer {
+    animation: bot-answer 0.1s ease-out infinite;
+}
+
+@keyframes bot-answer {
+    0% {
+        transform: rotate(-17deg);
+        scale: 1.2;
+    }
+
+    50% {
+        transform: rotate(-23deg);
+        scale: 1.2;
+    }
+
+    100% {
+        transform: rotate(-17deg);
+        scale: 1.2;
+    }
+}
+
+#man.manFaceBox>.headbox>div,
+.manFaceBox#bot>.headbox>div {
+    transform: scale(2) !important;
+}
 
 #bot>div img {
     position: relative;
     top: -15px
 }
 
-.bubble {
+#man .bubble {
     position: absolute;
-    top: top;
-    left: -3px;
+    top: -77px;
+    left: 147px;
+}
+
+#bot .bubble {
+    position: absolute;
+    top: -42px;
+    right: 147px;
 }
 
 
