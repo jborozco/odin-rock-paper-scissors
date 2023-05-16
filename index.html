@@ -11,26 +11,39 @@
 </head>
 
 <body>
-    <div id="logo"><img src="img/logo.svg" alt="rock paper scissors logo" /></div>
+    <div id="logo"><img src="img/logo.png" alt="rock paper scissors logo" /></div>
 
     <div id="container" class="neutral">
         <div id="content">
             <div id="manVsBot">
                 <div id="man" class="player-container">
-                    <div id="man-face"><img src="img/man-neutral.svg" alt="man face" /></div>
+                    <div class="headbox">
+                        <div class="bubble"><img src="img/man-bubble-paper.svg" alt=""></div>
+                        <div id="man-face"><img src="img/man-neutral.svg" alt="man face" /></div>
+                    </div>
                 </div>
                 <div id="bot" class="player-container">
-                    <div id="bot-face"><img src="img/bot-neutral.svg" alt="bot face" /></div>
+                    <div class="headbox">
+                        <div class="bubble"><img src="img/man-bubble-paper.svg" alt=""></div>
+                        <div id="bot-face"><img src="img/bot-neutral.svg" alt="bot face" /></div>
+                    </div>
                 </div>
             </div>
             <div id="text-prompt">
-                <h1>GET READY!</h1>
+                <div class="title"><img src="img/text-getready.png"></div>
                 <p>Choose your weapon...</p>
             </div>
             <div id="buttons">
-                <div class="button hand paper"></div>
-                <div class="button hand scissors"></div>
-                <div class="button hand rock"></div>
+                <div id="button-paper" class="button hand">
+                    <div class="paper"></div>
+                </div>
+                <div id="button-scissors" class="button hand">
+                    <div class="scissors"></div>
+                </div>
+                <div id="button-rock" class="button hand rock">
+                    <div class="rock"></div>
+
+                </div>
 
 
             </div>

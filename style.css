@@ -32,10 +32,12 @@ body {
     margin: 20px;
 }
 
+/* HEADS */
+
 #manVsBot {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 
 }
 
@@ -49,6 +51,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 60px;
 }
 
 #man>div,
@@ -57,11 +60,42 @@ body {
     transform: rotate(-45deg);
 }
 
+#man>.headbox>div,
+#bot>.headbox>div {
+    animation: breathe 3s ease-out infinite;
+}
+
+@keyframes breathe {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(10px);
+
+
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+
 #bot>div img {
     position: relative;
     top: -15px
 }
 
+.bubble {
+    position: absolute;
+    top: top:px;
+    left: -3px;
+}
+
+
+/* TEXT */
 
 #text-prompt {
     display: flex;
@@ -69,13 +103,19 @@ body {
 
 }
 
-#text-prompt h1 {
-    text-align: center;
+#text-prompt .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #text-prompt p {
     text-align: center;
 }
+
+/* BUTTONS */
+
 
 #buttons {
     display: flex;
@@ -90,24 +130,59 @@ body {
     border-style: solid;
     border-color: #000000;
     border-radius: 36px;
-    n
+    margin: 0 10px;
 }
 
-.button.hand {
+.button:hover {
+    position: relative;
+    top: 2px;
+    border-width: 2px 2px 9px 2px;
+    cursor: pointer;
+
+}
+
+.button:active {
+    position: relative;
+    top: 6px;
+    border-width: 2px 2px 4px 2px;
+    cursor: pointer;
+
+}
+
+.button.hand,
+.button.hand div {
     width: 157px;
     height: 111px;
     background-position: center center;
     background-repeat: no-repeat;
+
 }
 
-.button.hand.paper {
+.button.hand:hover div {
+    position: relative;
+    top: -1px;
+    transform: rotate(-7deg);
+
+}
+
+.button.hand:active div {
+    position: relative;
+    top: -1px;
+    transform: rotate(0);
+
+}
+
+
+
+
+.button.hand .paper {
     background-image: url('img/hand-paper.svg');
 }
 
-.button.hand.scissors {
+.button.hand .scissors {
     background-image: url('img/hand-scissors.svg');
 }
 
-.button.hand.rock {
+.button.hand .rock {
     background-image: url('img/hand-stone.svg');
 }
