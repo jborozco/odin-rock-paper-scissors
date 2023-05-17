@@ -21,6 +21,7 @@ let manBubble = document.querySelector('#man .bubble img');
 let botBubble = document.querySelector('#bot .bubble img');
 let container = document.querySelector('#container');
 let manVsBot = document.querySelector('#manVsBot');
+let logo = document.querySelector('#logo');
 
 
 
@@ -134,5 +135,9 @@ buttonNo.onclick = () => {
     buttons2.className = "btn-hide";
     title.src = "img/thanks.png";
     manVsBot.style.display = "none";
-    subtext.innerHTML = `Game made by <a href="https://github.com/jborozco">@jborozco</a> for the <a href="https://www.theodinproject.com/">Odin project</a>.`;
+    subtext.innerHTML = `Game made by <a href="https://github.com/jborozco" target="blank">@jborozco</a> for the <a href="https://www.theodinproject.com/" target="blank">Odin project</a>.`;
+}
+
+logo.onclick = () => {
+    location.reload();
 }
